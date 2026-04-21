@@ -1,1 +1,48 @@
 @import "tailwindcss";
+
+@theme {
+  --color-studio-dark: #0D0D0B;
+  --color-studio-card: #161614;
+  --color-studio-oliva: #3D4A35;
+  --color-studio-oliva-lt: #5C6B52;
+  --color-studio-crema: #F5F0E8;
+  --color-studio-gris: #9A9A92;
+  --color-studio-borde: #2A2A28;
+
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-studio-dark text-studio-crema antialiased font-body;
+  }
+
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-studio-oliva text-studio-crema px-8 py-3 uppercase tracking-widest text-[11px] font-bold transition-all duration-300 hover:bg-studio-crema hover:text-studio-dark cursor-pointer;
+  }
+  .card-studio {
+    @apply bg-studio-card border border-studio-borde p-8 transition-all duration-300 hover:border-studio-oliva hover:bg-[#1a1a18];
+  }
+  .input-studio {
+    @apply w-full bg-studio-card border border-studio-borde p-4 text-studio-crema outline-none transition-colors focus:border-studio-oliva placeholder:text-studio-gris/40;
+  }
+  .flex-space{
+    @apply flex justify-between
+  }
+  .flex-center{
+    @apply flex justify-center
+  }
+  .nav-link {
+    @apply text-studio-gris text-[13px] font-medium tracking-[0.2em] uppercase transition-all duration-300 hover:text-studio-oliva-lt;
+  }
+  .title {
+    @apply text-2xl tracking-wider uppercase font-semibold text-studio-crema;
+  }
+}
