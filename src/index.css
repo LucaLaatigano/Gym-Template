@@ -1,9 +1,9 @@
 @import "tailwindcss";
-
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=DM+Sans:wght@400;500;700&display=swap');
 @theme {
   --color-studio-dark: #0D0D0B;
   --color-studio-card: #161614;
-  --color-studio-oliva: #3D4A35;
+  --color-studio-oliva: #556B47;
   --color-studio-oliva-lt: #5C6B52;
   --color-studio-crema: #F5F0E8;
   --color-studio-gris: #9A9A92;
@@ -44,5 +44,8 @@
   }
   .title {
     @apply text-2xl tracking-wider uppercase font-semibold text-studio-crema;
+  }
+  .btn{
+    @apply w-40 h-10 px-5 hover:cursor-pointer rounded-2xl
   }
 }

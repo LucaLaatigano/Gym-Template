@@ -1,9 +1,21 @@
 import { useState } from "react"
 import { IoMenuOutline, IoCloseOutline } from "react-icons/io5";
-
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/all";
+gsap.registerPlugin(ScrollToPlugin)
 export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false)
-
+    const handToScroll = (id) => {
+        setIsOpen(false)
+        gsap.to(window, {
+            duration: 1.2,
+            scrollTo: {
+                y: `#${id}`,
+                offsetY: 80,
+            },
+            ease: "power3.inOut"
+        })
+    }
     return (
         <nav className="fixed top-0 left-0 w-full z-50 border-b border-studio-borde bg-studio-dark backdrop-blur-md">
             <div className="max-w-7xl mx-auto flex justify-between items-center h-20 px-6">
@@ -22,10 +34,10 @@ export default function NavBar() {
                 </div>
 
                 <div className="hidden md:flex items-center gap-8">
-                    <a href="#inicio" className="nav-link">Inicio</a>
-                    <a href="#planes" className="nav-link">Planes</a>
-                    <a href="#clases" className="nav-link">Clases</a>
-                    <a href="#contacto" className="btn-primary py-2 px-6">Contacto</a>
+                    <a href="#inicio" onClick={() => handToScroll("hero")} className="nav-link">Inicio</a>
+                    <a href="#mebresias" onClick={() => handToScroll("membresias")} className="nav-link">Planes</a>
+                    <a href="#clases" onClick={() => handToScroll("clases")} className="nav-link">Clases</a>
+                    <a href="#contacto" onClick={() => handToScroll("contacto")} className="nav-link">Contacto</a>
                 </div>
             </div>
 
@@ -35,16 +47,16 @@ export default function NavBar() {
                  md:hidden
             `}>
                 <div className="flex flex-col p-3 gap-3">
-                    <a href="#inicio" onClick={() => setIsOpen(false)} className="text-2xl font-display text-studio-crema hover:cursor-pointer hover:bg-studio-borde/50 rounded-2xl p-3">Inicio</a>
-                    <a href="#planes" onClick={() => setIsOpen(false)} className="text-2xl font-display text-studio-crema hover:cursor-pointer hover:bg-studio-borde/50 rounded-2xl p-3">Planes</a>
-                    <a href="#clases" onClick={() => setIsOpen(false)} className="text-2xl font-display text-studio-crema hover:cursor-pointer hover:bg-studio-borde/50 rounded-2xl p-3">Clases</a>
-                    <a href="#contacto" onClick={() => setIsOpen(false)} className="btn-primary w-full mt-4">Contacto</a>
+                    <a href="#inicio" onClick={() => handToScroll("hero")} className="text-2xl font-display text-studio-crema hover:cursor-pointer hover:bg-studio-borde/50 rounded-2xl p-3">Inicio</a>
+                    <a href="#mebresias" onClick={() => handToScroll("membresias")} className="text-2xl font-display text-studio-crema hover:cursor-pointer hover:bg-studio-borde/50 rounded-2xl p-3">Planes</a>
+                    <a href="#clases" onClick={() => handToScroll("clases")} className="text-2xl font-display text-studio-crema hover:cursor-pointer hover:bg-studio-borde/50 rounded-2xl p-3">Clases</a>
+                    <a href="#contacto" onClick={() => handToScroll("contacto")} className="text-2xl font-display text-studio-crema hover:cursor-pointer hover:bg-studio-borde/50 rounded-2xl p-3">Contacto</a>
                 </div>
             </div>
 
             {isOpen && (
                 <div
-                    className="fixed inset-0 bg-black/60 z-[-2] md:hidden"
+                    className="fixed inset-0 bg-studio-dark/60 z-[-2] md:hidden"
                     onClick={() => setIsOpen(false)}
                 />
             )}

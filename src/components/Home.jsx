@@ -1,4 +1,5 @@
 import Hero from "./Hero";
+import Membresias from "./Membresias";
 import NavBar from "./NavBar";
 
 export default function Home() {
@@ -6,8 +7,8 @@ export default function Home() {
         <div className="w-full h-screen bg-studio-card">
             <NavBar />
             <div>
-                <Hero />
-                <div className="h-screen bg-studio-card"></div>
+                <Hero id="hero" />
+                <Membresias id="membresias" />
             </div>
         </div>
     )
