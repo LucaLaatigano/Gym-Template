@@ -42,7 +42,7 @@
   .nav-link {
     @apply text-studio-gris text-[13px] font-medium tracking-[0.2em] uppercase transition-all duration-300 hover:text-studio-oliva-lt;
   }
-  .title {
+  .title-nav {
     @apply text-2xl tracking-wider uppercase font-semibold text-studio-crema;
   }
   .btn{

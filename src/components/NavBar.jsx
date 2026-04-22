@@ -20,7 +20,7 @@ export default function NavBar() {
         <nav className="fixed top-0 left-0 w-full z-50 border-b border-studio-borde bg-studio-dark backdrop-blur-md">
             <div className="max-w-7xl mx-auto flex justify-between items-center h-20 px-6">
 
-                <h2 className="title">
+                <h2 className="title-nav">
                     form <span className="text-studio-oliva-lt italic">studio</span>
                 </h2>
 
@@ -35,6 +35,7 @@ export default function NavBar() {
 
                 <div className="hidden md:flex items-center gap-8">
                     <a href="#inicio" onClick={() => handToScroll("hero")} className="nav-link">Inicio</a>
+                    <a href="#clases" onClick={() => handToScroll("nosotros")} className="nav-link">Nostros</a>
                     <a href="#mebresias" onClick={() => handToScroll("membresias")} className="nav-link">Planes</a>
                     <a href="#clases" onClick={() => handToScroll("clases")} className="nav-link">Clases</a>
                     <a href="#contacto" onClick={() => handToScroll("contacto")} className="nav-link">Contacto</a>
@@ -48,6 +49,7 @@ export default function NavBar() {
             `}>
                 <div className="flex flex-col p-3 gap-3">
                     <a href="#inicio" onClick={() => handToScroll("hero")} className="text-2xl font-display text-studio-crema hover:cursor-pointer hover:bg-studio-borde/50 rounded-2xl p-3">Inicio</a>
+                    <a href="#clases" onClick={() => handToScroll("nosotros")} className="text-2xl font-display text-studio-crema hover:cursor-pointer hover:bg-studio-borde/50 rounded-2xl p-3">Nostros</a>
                     <a href="#mebresias" onClick={() => handToScroll("membresias")} className="text-2xl font-display text-studio-crema hover:cursor-pointer hover:bg-studio-borde/50 rounded-2xl p-3">Planes</a>
                     <a href="#clases" onClick={() => handToScroll("clases")} className="text-2xl font-display text-studio-crema hover:cursor-pointer hover:bg-studio-borde/50 rounded-2xl p-3">Clases</a>
                     <a href="#contacto" onClick={() => handToScroll("contacto")} className="text-2xl font-display text-studio-crema hover:cursor-pointer hover:bg-studio-borde/50 rounded-2xl p-3">Contacto</a>
