@@ -9,8 +9,6 @@ export default function Hero({ id }) {
     const bgImage = useRef()
 
     useGSAP(() => {
-        // 1. Seteo inicial: Opacidad 0 y abajo
-
         const textElements = container.current.querySelectorAll('span.title-anim, h1.title-anim, p.title-anim')
         const textSplit = new SplitText(textElements, {
             type: 'lines',
@@ -20,13 +18,11 @@ export default function Hero({ id }) {
         const tl = gsap.timeline({ defaults: { ease: "power4.out" } })
 
         tl
-            // Animación del fondo
             .from(bgImage.current, {
                 scale: 1.2,
                 duration: 2.5,
                 filter: "blur(10px)",
             })
-            // Animación del texto (empieza 2 segundos antes de que termine el fondo)
             .from(textSplit.lines, {
                 opacity: 0,
                 y: 80,
@@ -35,14 +31,13 @@ export default function Hero({ id }) {
                 duration: 1.5,
                 stagger: 0.15,
             }, "-=2")
-            // Animación de los botones (corregido)
             .from(".btn-anim", {
                 opacity: 0,
                 y: 40,
-                duration: 0.5,
-                stagger: 0.2,
+                duration: 0.8, // Un poco más de duración para que sea suave
+                stagger: 0.1,
                 clearProps: "all"
-            }, "-=0.1") // Se solapa sutilmente con el final del texto
+            }, "<0.5") // Se solapa sutilmente con el final del texto
 
     }, { scope: container })
     return (
