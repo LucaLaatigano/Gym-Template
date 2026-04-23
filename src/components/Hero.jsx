@@ -34,10 +34,10 @@ export default function Hero({ id }) {
             .from(".btn-anim", {
                 opacity: 0,
                 y: 40,
-                duration: 0.8, // Un poco más de duración para que sea suave
+                duration: 0.8,
                 stagger: 0.1,
                 clearProps: "all"
-            }, "<0.5") // Se solapa sutilmente con el final del texto
+            }, "<0.5")
 
     }, { scope: container })
     return (
@@ -54,7 +54,6 @@ export default function Hero({ id }) {
                     Un espacio diseñado para el progreso real con equipamiento de alto rendimiento, coaches certificados y una comunidad que te acompaña.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-5 mt-8">
-                    {/* Sin clases de opacity/translate — GSAP las maneja */}
                     <button className="btn btn-anim bg-studio-oliva text-studio-crema px-8 py-3 mr-5 tracking-wider font-bold text-[11px] uppercase transition-all hover:bg-studio-crema hover:text-studio-dark">
                         VER PLANES
                     </button>

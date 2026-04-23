@@ -21,8 +21,8 @@ export default function NavBar() {
     }
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-[100] border-b border-studio-borde bg-studio-dark/80 backdrop-blur-md">
-            <div className="relative z-[110] max-w-7xl mx-auto flex justify-between items-center h-20 px-6 bg-studio-dark">
+        <nav className="fixed top-0 left-0 w-full z-100 border-b border-studio-borde bg-studio-dark/80 backdrop-blur-md">
+            <div className="relative z-110 max-w-7xl mx-auto flex justify-between items-center h-20 px-6 bg-studio-dark">
                 <h2 className="title-nav text-studio-crema text-xl font-bold">
                     form <span className="text-studio-oliva-lt italic">studio</span>
                 </h2>
@@ -46,7 +46,7 @@ export default function NavBar() {
             </div>
 
             <div className={`
-                fixed left-0 w-full bg-studio-dark border-b border-studio-borde transition-all duration-500 ease-in-out z-[105]
+                fixed left-0 w-full bg-studio-dark border-b border-studio-borde transition-all duration-500 ease-in-out z-105
                 ${isOpen ? "top-20 opacity-100" : "-top-full opacity-0"}
                 md:hidden
             `}>
@@ -61,7 +61,7 @@ export default function NavBar() {
 
             {isOpen && (
                 <div
-                    className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[101] md:hidden"
+                    className="fixed inset-0 bg-black/60 backdrop-blur-sm z-101 md:hidden"
                     onClick={() => setIsOpen(false)}
                 />
             )}
