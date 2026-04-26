@@ -40,6 +40,16 @@ export default function Hero({ id }) {
             }, "<0.5")
 
     }, { scope: container })
+    const scrollTo = (id) => {
+        gsap.to(window, {
+            duration: 1.2,
+            scrollTo: {
+                y: `#${id}`,
+                offsetY: 80,
+            },
+            ease: "power3.inOut"
+        })
+    }
     return (
         <section ref={container} id={id} className="relative h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden bg-black">
             <div className="z-20 flex flex-col items-center gap-3 max-w-3xl">
@@ -54,10 +64,10 @@ export default function Hero({ id }) {
                     Un espacio diseñado para el progreso real con equipamiento de alto rendimiento, coaches certificados y una comunidad que te acompaña.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-5 mt-8">
-                    <button className="btn btn-anim bg-studio-oliva text-studio-crema px-8 py-3 mr-5 tracking-wider font-bold text-[11px] uppercase transition-all hover:bg-studio-crema hover:text-studio-dark">
+                    <button onClick={() => scrollTo("membresias")} className="btn btn-anim bg-studio-oliva text-studio-crema px-8 py-3 mr-5 tracking-wider font-bold text-[11px] uppercase transition-all hover:bg-studio-crema hover:text-studio-dark">
                         VER PLANES
                     </button>
-                    <button className="btn btn-anim border border-studio-crema text-studio-crema px-8 py-3 tracking-wider font-bold text-[11px] uppercase transition-all hover:bg-studio-crema hover:text-studio-dark">
+                    <button onClick={() => scrollTo("clases")} className="btn btn-anim border border-studio-crema text-studio-crema px-8 py-3 tracking-wider font-bold text-[11px] uppercase transition-all hover:bg-studio-crema hover:text-studio-dark">
                         VER CLASES
                     </button>
                 </div>

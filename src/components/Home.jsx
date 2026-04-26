@@ -1,3 +1,4 @@
+import Clases from "./Clases";
 import Hero from "./Hero";
 import Membresias from "./Membresias";
 import NavBar from "./NavBar";
@@ -11,6 +12,7 @@ export default function Home() {
                 <Hero id="hero" />´
                 <Nosotros id="nosotros" />
                 <Membresias id="membresias" />
+                <Clases id="clases" />
             </div>
         </div>
     )

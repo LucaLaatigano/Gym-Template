@@ -49,4 +49,7 @@
   .btn{
     @apply w-40 h-10 px-5 hover:cursor-pointer rounded-2xl
   }
+  .div-layout{
+    @apply max-w-7xl mx-auto px-6 lg:px-12
+  }
 }

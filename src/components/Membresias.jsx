@@ -1,5 +1,38 @@
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap"
 import { IoMdCheckmark } from "react-icons/io";
+import { SplitText, ScrollTrigger } from "gsap/all";
+import { useRef } from "react";
+gsap.registerPlugin(SplitText, ScrollTrigger)
 export default function Membresias({ id }) {
+    const container = useRef()
+    useGSAP(() => {
+        const titleSplit = gsap.utils.toArray(".anim-item", container.current)
+        const planCards = gsap.utils.toArray(".plan", container.current);
+        gsap.set(planCards, { opacity: 0, x: -100 })
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: container.current,
+                start: "top center",
+                toggleActions: "play none none none",
+            },
+            ease: "power1.inOut"
+        })
+
+        tl
+            .from(titleSplit, {
+                x: -100,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.3
+            })
+            .to(planCards, {
+                x: 0,
+                opacity: 1,
+                duration: 0.5,
+                stagger: 0.3
+            }, "-=0.4")
+    }, { scope: container })
     const planesData = [
         {
             type: "ESENCIAL",
@@ -24,15 +57,15 @@ export default function Membresias({ id }) {
         window.open(url, '_blank');
     }
     return (
-        <section id={id} className="h-auto w-full py-20 bg-studio-card text-white">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <section ref={container} id={id} className="h-auto w-full py-20 bg-studio-card text-white">
+            <div className="div-layout">
                 <div className="flex flex-col gap-6 mb-16">
-                    <span className="text-[10px] md:text-xs text-studio-oliva font-medium tracking-[0.3em] uppercase">
-                        MEMBRESIAS
+                    <span className="anim-item text-[10px] md:text-xs text-studio-oliva font-medium tracking-[0.3em] uppercase">
+                        PLANES
                     </span>
-                    <h3 className="text-5xl md:text-7xl font-display leading-[1.1] tracking-tight">
+                    <h3 className="anim-item text-5xl md:text-7xl font-display leading-[1.1] tracking-tight">
                         Encontrá el plan
-                        <span className="block text-studio-oliva italic mt-2">que te pertenece.</span>
+                        <span className="anim-item block text-studio-oliva italic mt-2">que te pertenece.</span>
                     </h3>
                 </div>
 
@@ -40,7 +73,7 @@ export default function Membresias({ id }) {
                     {planesData.map((plan, index) => (
                         <div
                             key={index}
-                            className={`flex flex-col justify-between p-8 transition-all duration-300 hover:shadow-2xl ${index % 2 === 0 ? "bg-studio-borde" : "bg-studio-oliva"
+                            className={`plan flex flex-col justify-between p-8 transition-all duration-300 hover:shadow-2xl ${index % 2 === 0 ? "bg-studio-borde" : "bg-studio-oliva"
                                 }`}
                         >
                             <div className="flex flex-col gap-6">
@@ -49,7 +82,7 @@ export default function Membresias({ id }) {
                                 </span>
 
                                 <div className="flex items-baseline gap-1">
-                                    <span className="text-5xl font-display font-bold">
+                                    <span className="text-5xl font-display font-bold tracking-wider">
                                         ${plan.price}
                                     </span>
                                     <span className="text-sm opacity-60">/mes</span>
