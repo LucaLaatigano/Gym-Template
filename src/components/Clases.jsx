@@ -58,9 +58,29 @@ export default function Clases({ id }) {
                         <span className="anim-item block text-studio-oliva italic mt-2">cada objetivo.</span>
                     </h3>
                 </div>
-                <div className="grid-layout">
+                <div className="grid-layout border-t border-studio-crema/20 md:border-t-0">
                     {classesData.map((item, index) => (
-                        <div key={index} className={`box-class flex items-start gap-8 p-10 ${index === classesData.length - 1 ? "" : "border-b border-studio-crema/20"} w-full bg-studio-card`}>
+                        <div
+                            key={index}
+                            className={`
+                box-class flex items-start gap-8 p-10 bg-studio-card w-full
+                border-b border-studio-crema/20 
+        
+        
+                md:border-r md:border-studio-crema/20
+                ${(index + 1) % 2 === 0 ? "md:border-r-0" : ""} 
+                ${index >= classesData.length - 2 ? "md:border-b-0" : "md:border-b"}
+
+        
+                lg:border-r lg:border-studio-crema/20
+                ${(index + 1) % 3 === 0 ? "lg:border-r-0" : "lg:border-r"}
+                ${index >= classesData.length - 3 ? "lg:border-b-0" : "lg:border-b"}
+
+                xl:border-b xl:border-r
+                ${(index + 1) % 3 === 0 ? "xl:border-r-0" : "xl:border-r"}
+                ${index >= classesData.length - 3 ? "xl:border-b-0" : "xl:border-b"}
+                    `}
+                        >
                             <span className="text-studio-crema/40 text-md pt-1">
                                 {item.num}
                             </span>

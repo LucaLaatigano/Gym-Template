@@ -41,6 +41,7 @@ export default function NavBar() {
                     <button onClick={() => handToScroll("nosotros")} className="nav-link text-studio-crema hover:text-studio-oliva-lt transition-colors">Nosotros</button>
                     <button onClick={() => handToScroll("membresias")} className="nav-link text-studio-crema hover:text-studio-oliva-lt transition-colors">Planes</button>
                     <button onClick={() => handToScroll("clases")} className="nav-link text-studio-crema hover:text-studio-oliva-lt transition-colors">Clases</button>
+                    <button onClick={() => handToScroll("prueba")} className="nav-link text-studio-crema hover:text-studio-oliva-lt transition-colors">Prueba Gratuita</button>
                     <button onClick={() => handToScroll("contacto")} className="nav-link text-studio-crema hover:text-studio-oliva-lt transition-colors">Contacto</button>
                 </div>
             </div>
@@ -55,6 +56,7 @@ export default function NavBar() {
                     <button onClick={() => handToScroll("nosotros")} className="text-left text-2xl font-display text-studio-crema hover:bg-studio-borde/50 rounded-2xl p-3 transition-colors">Nosotros</button>
                     <button onClick={() => handToScroll("membresias")} className="text-left text-2xl font-display text-studio-crema hover:bg-studio-borde/50 rounded-2xl p-3 transition-colors">Planes</button>
                     <button onClick={() => handToScroll("clases")} className="text-left text-2xl font-display text-studio-crema hover:bg-studio-borde/50 rounded-2xl p-3 transition-colors">Clases</button>
+                    <button onClick={() => handToScroll("prueba")} className="text-left text-2xl font-display text-studio-crema hover:bg-studio-borde/50 rounded-2xl p-3 transition-colors">Prueba Gratuita</button>
                     <button onClick={() => handToScroll("contacto")} className="text-left text-2xl font-display text-studio-crema hover:bg-studio-borde/50 rounded-2xl p-3 transition-colors">Contacto</button>
                 </div>
             </div>
